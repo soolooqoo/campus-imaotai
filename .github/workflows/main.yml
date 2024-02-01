@@ -1,1 +1,17 @@
+import requests
+import json
+import time
 
+url="http://dmc-org.dragonpass.com.cn/spdbae/api/ticket/products/getHoliday/TA1013000005"
+
+headers ={
+    'User-Agent': "Chrome/17.1",
+    'Accept': "*/*",
+    'Cache-Control': "no-cache",
+    'accept-encoding': "gzip, deflate",
+    'referer': "http://dmc-org.dragonpass.com.cn/spdbae/api/ticket/products/getHoliday/TA1013000005",
+    'Connection': "keep-alive"
+    }
+response=requests.request("GET",url,headers=headers)
+if ("2024-03-1" in response.text or "2024-03-01" in response.text or "2024-3-1" in response.text or "2024-3-01" in response.text):
+    print("have")
